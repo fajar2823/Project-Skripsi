@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+    <title>Hasil Rekomendasi</title>
+</head>
+<body>
+    <div class="container">
+        <center><h2>Top 5 Rekomendasi</h2></center>
+        <br><br>
+        Halal = {{hasil[0]}} || Area_merokok = {{hasil[1]}} || Harga = {{hasil[2]}} || Tempat_parkir = {{hasil[3]}}
+        {{ rekom[2]['Nama_warung'][2] }}
+      <br><br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Top #</th>
+                    <th>Nama Tempat Makan</th>
+                    <th>Halal</th>
+                    <th>Area Merokok</th>
+                    <th>Harga</th>
+                    <th>Tempat Parkir</th>
+                </tr>
+            </thead>
+            <tbody>
+              {%for i in range(5)%}
+                <tr>
+                    <td>i</td>
+                    <td>{{ rekom[i]['Nama_warung'][0] }}</td>
+                    <td>{{ rekom[i]['Halal'][0] }}</td>
+                    <td>{{ rekom[i]['Area_merokok'][0] }}}</td>
+                    <td>{{ rekom[i]['Harga'][0] }}</td>
+                    <td>{{ rekom[i]['Tempat_parkir'][0] }}</td>
+                </tr>
+              {%endfor%}
+
+<!--                <tr>-->
+<!--                    <td>1</td>-->
+<!--                    <td>{{ rekom[0]['Nama_warung'][0] }}</td>-->
+<!--                    <td>{{ rekom[0]['Halal'][0] }}</td>-->
+<!--                    <td>{{ rekom[0]['Area_merokok'][0] }}}</td>-->
+<!--                    <td>{{ rekom[0]['Harga'][0] }}</td>-->
+<!--                    <td>{{ rekom[0]['Tempat_parkir'][0] }}</td>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>2</td>-->
+<!--                    <td>{{ rekom[1]['Nama_warung'][1] }}</td>-->
+<!--                    <td>{{ rekom[1]['Halal'][1] }}</td>-->
+<!--                    <td>{{ rekom[1]['Area_merokok'][1] }}}</td>-->
+<!--                    <td>{{ rekom[1]['Harga'][1] }}</td>-->
+<!--                    <td>{{ rekom[1]['Tempat_parkir'][1] }}</td>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>3</td>-->
+<!--                    <td>{{ rekom[2]['Nama_warung'][2] }}</td>-->
+<!--                    <td>{{ rekom[2]['Halal'][2] }}</td>-->
+<!--                    <td>{{ rekom[2]['Area_merokok'][2] }}}</td>-->
+<!--                    <td>{{ rekom[2]['Harga'][2] }}</td>-->
+<!--                    <td>{{ rekom[2]['Tempat_parkir'][2] }}</td>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>4</td>-->
+<!--                    <td>{{ rekom[3]['Nama_warung'][3] }}</td>-->
+<!--                    <td>{{ rekom[3]['Halal'][3] }}</td>-->
+<!--                    <td>{{ rekom[3]['Area_merokok'][3] }}}</td>-->
+<!--                    <td>{{ rekom[3]['Harga'][3] }}</td>-->
+<!--                    <td>{{ rekom[3]['Tempat_parkir'][3] }}</td>-->
+<!--                </tr>-->
+
+<!--                <tr>-->
+<!--                    <td>5</td>-->
+<!--                    <td>{{ rekom[4]['Nama_warung'][4] }}</td>-->
+<!--                    <td>{{ rekom[4]['Halal'][4] }}</td>-->
+<!--                    <td>{{ rekom[4]['Area_merokok'][4] }}}</td>-->
+<!--                    <td>{{ rekom[4]['Harga'][4] }}</td>-->
+<!--                    <td>{{ rekom[4]['Tempat_parkir'][4] }}</td>-->
+<!--                </tr>-->
+            </tbody>
+        </table>
+
+        <br>
+        <a href="/map"><input type="button" value="Lihat Lokasi" class="btn btn-primary"></a>
+        <a href="/main"><input type="button" value="Home" class="btn btn-warning"></a>
+    </div>
+
+</body>
+</html>

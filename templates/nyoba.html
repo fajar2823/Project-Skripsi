@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+{{data}}
+<br><br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Top #</th>
+                    <th>Nama Tempat Makan</th>
+                    <th>Halal</th>
+                    <th>Area Merokok</th>
+                    <th>Harga</th>
+                    <th>Tempat Parkir</th>
+                </tr>
+            </thead>
+            <tbody>
+              {%for i in range(5)%}
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{ rekom[i]['Nama_warung'][0] }}</td>
+                    <td>{{ rekom[i]['Halal'][0] }}</td>
+                    <td>{{ rekom[i]['Area_merokok'][0] }}</td>
+                    <td>{{ rekom[i]['Harga'][0] }}</td>
+                    <td>{{ rekom[i]['Tempat_parkir'][0] }}</td>
+                </tr>
+              {%endfor%}
+
+
+
+            </tbody>
+        </table>
+</body>
+</html>
